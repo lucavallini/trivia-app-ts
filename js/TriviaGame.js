@@ -1,38 +1,31 @@
-class TriviaGame{
-    constructor(){
-        this.preguntas=[];
-        this.preguntaActual=0;
-        this.puntaje=0;
+class TriviaGame {
+    constructor() {
+        this.preguntas = [];
+        this.preguntaActual = 0;
+        this.puntaje = 0;
     }
-
-    iniciar(preguntas){
+    iniciar(preguntas) {
         this.preguntas = preguntas;
         this.preguntaActual = 0;
-        this.puntaje=0;
+        this.puntaje = 0;
     }
-
-    getPreguntaActual(){
-    return this.preguntas[this.preguntaActual]
+    getPreguntaActual() {
+        return this.preguntas[this.preguntaActual];
     }
-
-    responder(respuesta){
-        if (respuesta === this.getPreguntaActual().correct_answer){
-            this.puntaje += 1
-            return true
-        } 
-        else{
-            return false
+    responder(respuesta) {
+        if (respuesta === this.getPreguntaActual().correct_answer) {
+            this.puntaje += 1;
+            return true;
+        }
+        else {
+            return false;
         }
     }
-
-    siguiente(){
-        this.preguntaActual += 1
+    siguiente() {
+        this.preguntaActual += 1;
     }
-
-    haTerminado(){
+    haTerminado() {
         return this.preguntaActual >= this.preguntas.length;
     }
-
 }
-
-export default TriviaGame
+export default TriviaGame;
